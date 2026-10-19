@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لغز الجبل · Misteri di Gunung</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#EEF2E6;--sf:#fff;--ink:#17261C;--mu:#52645A;--ln:#C9D5C3;--pr:#1E5A3C;--onp:#fff;--or:#D9622B;--ok:#146B45;--okb:#DDF1E6;--bad:#A3243B;--badb:#F9E2E6;--tint:#E3ECDD;
+--ui:'Cairo',system-ui,sans-serif;--ar:'Noto Naskh Arabic','Cairo',serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A14;--sf:#172A21;--ink:#E8F0EA;--mu:#9DB2A5;--ln:#2A4236;--pr:#7FD1A0;--onp:#0B1B13;--or:#F08A55;--ok:#6FD8A6;--okb:#12362A;--bad:#FF8FA2;--badb:#3E1B25;--tint:#1F3328}}
+:root[data-theme="dark"]{--bg:#0E1A14;--sf:#172A21;--ink:#E8F0EA;--mu:#9DB2A5;--ln:#2A4236;--pr:#7FD1A0;--onp:#0B1B13;--or:#F08A55;--ok:#6FD8A6;--okb:#12362A;--bad:#FF8FA2;--badb:#3E1B25;--tint:#1F3328}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);line-height:1.8;font-size:18px}
+button,input{font:inherit;color:inherit}button{cursor:pointer}:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.w{max-width:680px;margin:0 auto;padding:12px 14px 60px}
+.ar{font-family:var(--ar);font-size:1.3em;line-height:2.1}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.pill{border:1.5px solid var(--ln);background:var(--sf);border-radius:99px;padding:4px 14px;font-size:15px;font-weight:600}
+.pill.on{background:var(--pr);color:var(--onp);border-color:var(--pr)}
+.sc{border-radius:16px;overflow:hidden;border-bottom:5px solid var(--or)}.sc svg{display:block;width:100%;height:auto}
+h1{font-size:30px;margin:12px 0 2px}h2{font-size:21px;margin:18px 0 6px}
+.cd{background:var(--sf);border:1.5px solid var(--ln);border-radius:14px;padding:12px 16px;margin-top:10px}
+.cd.lk{border-style:dashed}.tr{direction:ltr;text-align:left;background:var(--tint);border-radius:10px;padding:8px 12px;margin-top:6px;font-size:15px;line-height:1.6}
+.mu{color:var(--mu);font-size:15px}
+.b{border:0;border-radius:12px;background:var(--pr);color:var(--onp);padding:9px 18px;font-weight:700}.b.g{background:transparent;color:var(--pr);border:1.5px solid var(--pr)}.b[disabled]{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+input.t{flex:1;min-width:0;padding:10px 12px;border:1.5px solid var(--ln);border-radius:12px;background:var(--sf);font-family:var(--ar);font-size:24px;direction:rtl}
+.kb{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;direction:rtl}.kb button{min-width:38px;padding:3px 6px;border:1.5px solid var(--ln);background:var(--sf);border-radius:8px;font-family:var(--ar);font-size:22px}
+.fb{margin-top:10px;padding:10px 14px;border-radius:12px}.fb.ok{background:var(--okb);color:var(--ok)}.fb.no{background:var(--badb);color:var(--bad)}
+.wave{display:none;gap:3px;align-items:center;height:28px}.wave.on{display:flex}.wave i{width:4px;height:6px;background:var(--or);border-radius:2px;animation:wv .8s infinite ease-in-out}.wave i:nth-child(2n){animation-delay:.2s}.wave i:nth-child(3n){animation-delay:.4s}
+@keyframes wv{50%{height:26px}}
+.sus{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.pk{display:block;width:100%;text-align:start;background:var(--sf);border:1.5px solid var(--ln);border-radius:12px;padding:8px 14px;margin-top:8px}
+.sway{transform-origin:50% 100%;transform-box:fill-box;animation:sw 3s infinite ease-in-out}@keyframes sw{50%{transform:rotate(4deg)}}
+.fl{transform-origin:50% 100%;transform-box:fill-box;animation:fk .5s infinite alternate}@keyframes fk{to{transform:scaleY(1.3) scaleX(.85)}}
+.dr{animation:dr 9s infinite alternate ease-in-out}@keyframes dr{to{transform:translateX(-60px)}}
+.rs{animation:rs 4s ease-out both}@keyframes rs{from{transform:translateY(40px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body><div class="w" id="app"></div>
+<script>
+const H=/[\u064B-\u0652\u0670\u0640]/g;
+const nz=s=>s.replace(H,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[؟?.,،!]/g,'').replace(/\s+/g,' ').trim();
+const SU=[
+{n:'أَحْمَد',d:'مُصَوِّرٌ مَغْرُورٌ، زَمِيلُ سَلْمَى فِي الْجَامِعَةِ.',i:'Fotografer sombong, teman kuliah Salma.',m:1,a:['كُنْتُ أُصَوِّرُ الضَّبَابَ مَعَ هِنْدٍ.','رَأَيْتُ مَرْيَمَ قُرْبَ الْخَيْمَةِ لَيْلًا.'],ai:['Aku memotret kabut bersama Hind.','Aku melihat Maryam dekat tenda pada malam hari.']},
+{n:'خَالِد',d:'مُرْشِدُ الرِّحْلَةِ، هَادِئٌ، يَعْرِفُ سَلْمَى مِنْ سَنَةٍ.',i:'Pemandu pendakian, tenang, kenal Salma setahun.',m:1,a:['كُنْتُ أَطْبُخُ الْعَشَاءَ مَعَ مَرْيَمَ.','حِذَاءُ يُوسُفَ أَزْرَقُ.'],ai:['Aku memasak makan malam bersama Maryam.','Sepatu Yusuf berwarna biru.']},
+{n:'مَرْيَم',d:'طَبِيبَةٌ شَابَّةٌ، لَطِيفَةٌ، جَارَةُ سَلْمَى.',i:'Dokter muda yang ramah, tetangga Salma.',m:0,a:['كُنْتُ أُسَاعِدُ خَالِدًا فِي الْمَطْبَخِ.','لَمْ أَرَ شَيْئًا.'],ai:['Aku membantu Khalid di dapur.','Aku tidak melihat apa-apa.']},
+{n:'يُوسُف',d:'يُحِبُّ الْأَلْعَابَ، بَخِيلٌ، ابْنُ عَمِّ سَلْمَى.',i:'Suka game, pelit, sepupu Salma.',m:1,a:['كُنْتُ أَنَامُ فِي خَيْمَتِي.','بَطَّارِيَّةُ هَاتِفِي فَارِغَةٌ.'],ai:['Aku tidur di tendaku.','Baterai ponselku kosong.']},
+{n:'هِنْد',d:'صَدِيقَةُ سَلْمَى الْمُقَرَّبَةُ، خَجُولَةٌ.',i:'Sahabat dekat Salma, pemalu.',m:0,a:['كُنْتُ مَعَ أَحْمَدَ.','رَأَيْتُ سَلْمَى تَضَعُ هَاتِفَهَا فِي الْحَقِيبَةِ.'],ai:['Aku bersama Ahmad.','Aku melihat Salma menaruh ponselnya di tas.']}];
+const P=[
+{t:'الْمَحَطَّةُ ١ · الْغَابَةُ',ti:'Pos 1 · Hutan',c:[
+ {ar:'قَالَتْ هِنْدُ: رَأَيْتُ سَلْمَى تَضَعُ هَاتِفَهَا فِي الْحَقِيبَةِ الْحَمْرَاءِ.',i:'Hind: aku melihat Salma menaruh ponselnya di tas merah.',v:[['الْحَقِيبَة','tas'],['هَاتِف','ponsel']]},
+ {ar:'قَالَ أَحْمَدُ: رَأَيْتُ مَرْيَمَ قُرْبَ الْخَيْمَةِ لَيْلًا.',i:'Ahmad: aku melihat Maryam dekat tenda pada malam hari.',v:[['خَيْمَة','tenda'],['لَيْلًا','malam hari']]},
+ {ar:'قَالَ يُوسُفُ: بَطَّارِيَّةُ هَاتِفِي فَارِغَةٌ.',i:'Yusuf: baterai ponselku kosong.',v:[['بَطَّارِيَّة','baterai'],['فَارِغ','kosong']]}],
+ q:'مَنْ قَالَ إِنَّ الْبَطَّارِيَّةَ فَارِغَةٌ؟',qi:'Siapa yang bilang baterainya kosong?',ok:['يوسف'],h:['اسْمُهُ يَبْدَأُ بِحَرْفِ الْيَاءِ.','هُوَ ابْنُ عَمِّ سَلْمَى.']},
+{t:'الْمَحَطَّةُ ٢ · الضَّبَابُ',ti:'Pos 2 · Kabut',c:[
+ {ar:'وَجَدْنَا أَثَرَ حِذَاءٍ أَزْرَقَ قُرْبَ خَيْمَةِ سَلْمَى.',i:'Kami menemukan jejak sepatu biru dekat tenda Salma.',v:[['أَثَر','jejak'],['حِذَاء','sepatu'],['أَزْرَق','biru']]},
+ {ar:'قَالَ خَالِدٌ: حِذَاءُ يُوسُفَ أَزْرَقُ، وَحِذَائِي أَسْوَدُ.',i:'Khalid: sepatu Yusuf biru, sepatuku hitam.',v:[['أَسْوَد','hitam']]}],
+ q:'مَنْ كَانَ قُرْبَ الْخَيْمَةِ؟',qi:'Siapa yang ada dekat tenda?',ok:['يوسف'],h:['لَوْنُ الْحِذَاءِ أَزْرَقُ.','اقْرَأْ كَلَامَ خَالِدٍ.']},
+{t:'الْمَحَطَّةُ ٣ · الصَّخْرَةُ',ti:'Pos 3 · Batu karang',c:[
+ {ar:'قَالَتْ مَرْيَمُ: كُنَّا نَطْبُخُ مَعًا فِي الْمَطْبَخِ، أَنَا وَخَالِدٌ.',i:'Maryam: kami memasak bersama di dapur, aku dan Khalid.',v:[['نَطْبُخ','kami memasak'],['مَعًا','bersama']]},
+ {ar:'وَجَدَتْ هِنْدُ الْهَاتِفَ فِي حَقِيبَةٍ خَضْرَاءَ.',i:'Hind menemukan ponsel itu di tas hijau.',v:[['خَضْرَاء','hijau'],['وَجَدَتْ','dia menemukan']]},
+ {ar:'قَالَ خَالِدٌ: الْحَقِيبَةُ الْخَضْرَاءُ لِيُوسُفَ.',i:'Khalid: tas hijau itu milik Yusuf.',v:[['لِ','milik / untuk']]}],
+ q:'أَيْنَ وَجَدَتْ هِنْدُ الْهَاتِفَ؟',qi:'Di mana Hind menemukan ponsel itu?',ok:['حقيبه خضراء','الحقيبه الخضراء'],h:['اللَّوْنُ أَخْضَرُ.','وَجَدَتْهُ فِي ... خَضْرَاءَ (حَقِيبَةٍ).']}];
+const END=[['كَانَ هَاتِفُ سَلْمَى فِي الْحَقِيبَةِ الْحَمْرَاءِ.','Ponsel Salma ada di tas merah.'],['أَرَادَ يُوسُفُ الْهَاتِفَ لِأَنَّ بَطَّارِيَّةَ هَاتِفِهِ فَارِغَةٌ.','Yusuf menginginkan ponsel itu karena baterai ponselnya kosong.'],['ذَهَبَ لَيْلًا بِحِذَائِهِ الْأَزْرَقِ وَأَخَذَ الْهَاتِفَ.','Malam hari ia pergi dengan sepatu birunya dan mengambil ponsel.'],['أَحْمَدُ كَانَ مَعَ هِنْدٍ، وَمَرْيَمُ كَانَتْ مَعَ خَالِدٍ.','Ahmad bersama Hind, Maryam bersama Khalid.'],['وَجَدَتْ هِنْدُ الْهَاتِفَ فِي حَقِيبَةِ يُوسُفَ الْخَضْرَاءِ.','Hind menemukan ponsel di tas hijau Yusuf.']];
+const K='ابتثجحخدذرزسشصضطظعغفقكلمنهوي'.split('').concat(['ء','أ','ؤ','ئ','ى','ة']);
+let S={s:0,rev:{},hint:{},done:{},voc:[],tr:false,h:true,nb:false,talk:{},acc:null,msg:{}};
+const $=s=>document.querySelector(s),A=t=>S.h?t:t.replace(H,'');
+const sv=i=>{const sky=['#F6C28B','#9CC7A6','#B9C6CC','#E9885A','#FFD27A'][i];let x='';
+ if(i==0)x='<polygon points="150,150 190,95 230,150" fill="#C8552B"/><polygon points="190,95 200,150 190,150" fill="#8E3A1C"/><ellipse class="fl" cx="290" cy="138" rx="9" ry="14" fill="#FF9E2C"/><ellipse class="fl" cx="290" cy="142" rx="5" ry="8" fill="#FFE27A"/>';
+ if(i==1)x=[60,140,220,300,350].map((a,k)=>`<g class="sway" style="animation-delay:${k*.4}s"><rect x="${a-3}" y="115" width="6" height="35" fill="#5A3A22"/><polygon points="${a-22},120 ${a},70 ${a+22},120" fill="#14532F"/><polygon points="${a-18},100 ${a},55 ${a+18},100" fill="#1B6B3D"/></g>`).join('');
+ if(i==2)x='<g fill="#fff" opacity=".6"><ellipse class="dr" cx="120" cy="105" rx="110" ry="16"/><ellipse class="dr" cx="300" cy="125" rx="120" ry="18" style="animation-duration:12s"/><ellipse class="dr" cx="200" cy="80" rx="90" ry="12" style="animation-duration:7s"/></g>';
+ if(i==3)x='<circle cx="320" cy="95" r="30" fill="#FFB347"/><polygon points="40,150 80,100 130,150" fill="#5E5048"/><polygon points="110,150 160,110 210,150" fill="#756559"/><polygon points="230,150 270,118 320,150" fill="#4A3F38"/>';
+ if(i==4)x='<g class="rs"><circle cx="200" cy="90" r="34" fill="#FFF3B0"/></g><g fill="#fff" opacity=".85"><ellipse class="dr" cx="90" cy="40" rx="40" ry="11"/><ellipse class="dr" cx="300" cy="55" rx="46" ry="12" style="animation-duration:12s"/></g>';
+ return`<div class="sc"><svg viewBox="0 0 400 150" role="img" aria-label="مشهد"><rect width="400" height="150" fill="${sky}"/>${x}<polygon points="0,150 90,85 170,130 260,70 400,150" fill="#2F5D45" opacity="${i==3?.0:.9}"/><polygon points="0,150 60,115 140,150" fill="#1E4A36"/></svg></div>`};
+const sp=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(H,''));u.lang='ar-SA';u.rate=.8;speechSynthesis.speak(u)}catch(e){}};
+const bar=()=>`<div class="bar"><button class="pill ${S.tr?'on':''}" data-a="tr">ترجمة</button><button class="pill ${S.h?'on':''}" data-a="hk">الحركات</button><button class="pill" data-a="nb">📓 دفتر المحقق (${S.voc.length})</button></div>`;
+const tx=(a,i)=>`<span class="ar" lang="ar">${A(a)}</span> <button class="pill" data-a="say" data-v="${a}" aria-label="استمع">🔊</button>${S.tr&&i?`<div class="tr">${i}</div>`:''}`;
+function r(){let h=bar();
+ if(S.nb)h+=nbk();else if(S.s==0)h+=base();else if(S.s<4)h+=pos(S.s-1);else h+=top();
+ $('#app').innerHTML=h;window.scrollTo(0,0)}
+function nbk(){return`<button class="b g" data-a="nb">رجوع</button><h1>دفتر المحقق</h1><h2>المفردات</h2>`+(S.voc.length?S.voc.map(v=>`<div class="cd"><b class="ar">${A(v[0])}</b>${S.tr?` <span class="mu">— ${v[1]}</span>`:' <span class="mu">(ترجمة ← أنشط)</span>'}</div>`).join(''):'<div class="cd mu">لا توجد مفردات بعد.</div>')+'<h2>الأقوال</h2>'+Object.keys(S.talk).map(k=>{const[a,b]=k.split('_');const u=SU[a];return`<div class="cd"><b>${A(u.n)}</b><div class="ar">${A(u.a[b])}</div>${S.tr?`<div class="tr">${u.ai[b]}</div>`:''}</div>`}).join('')}
+function base(){return sv(0)+`<h1>لغز الجبل</h1><p>${tx('سِتَّةُ أَصْدِقَاءَ صَعِدُوا الْجَبَلَ. فِي الْمَحَطَّةِ الثَّانِيَةِ اخْتَفَى هَاتِفُ سَلْمَى. السَّارِقُ وَاحِدٌ مِنَ الْخَمْسَةِ. أَنْتَ الْمُحَقِّقُ!','Enam sahabat mendaki gunung. Di Pos 2 ponsel Salma hilang. Pencurinya salah satu dari lima orang. Kamu detektifnya!')}</p><h2>الْمُشْتَبَهُ بِهِمْ</h2>`+SU.map(u=>`<div class="cd"><b style="font-size:22px">${A(u.n)}</b><div class="ar">${tx(u.d,u.i)}</div></div>`).join('')+`<div class="row"><button class="b" data-a="go">ابْدَأِ الصُّعُودَ ←</button></div>`}
+function pos(p){const d=P[p],cl=d.c.map((c,k)=>{const key=p+'_'+k;return S.rev[key]?`<div class="cd">${tx(c.ar,c.i)}</div>`:`<div class="cd lk"><button class="b g" data-a="rev" data-v="${key}">🔍 افْحَصْ دَلِيلًا</button></div>`}).join('');
+ const all=d.c.every((c,k)=>S.rev[p+'_'+k]),ok=S.done[p],hn=S.hint[p]||0;
+ let q='';if(all){q=`<h2>سُؤَالُ الْمُحَقِّقِ</h2><div class="cd"><b>${tx(d.q,d.qi)}</b><div class="row"><input class="t" id="inp" lang="ar" dir="rtl" placeholder="اُكْتُبْ جَوَابَكَ" ${ok?'disabled':''}></div>
+ ${ok?'':`<div class="kb">${K.map(k=>`<button data-a="k" data-v="${k}">${k}</button>`).join('')}<button data-a="k" data-v=" ">␣</button><button data-a="k" data-v="⌫">⌫</button></div>
+ <div class="row"><button class="b" data-a="chk">إِرْسَال</button><button class="b g" data-a="mic" id="mic">🎤 تَحَدَّثْ</button><div class="wave" id="wv"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div id="vn" class="mu"></div>`}
+ ${S.msg[p]||''}${[...Array(hn)].map((_,k)=>`<div class="fb no">💡 ${tx(d.h[k])}</div>`).join('')}</div>`}
+ const people=`<h2>حِوَار</h2><div class="row">`+SU.map((u,k)=>`<button class="pill" data-a="ask" data-v="${k}">${A(u.n)}</button>`).join('')+`</div><div id="dlg">${S.dl!=null?dlg(S.dl):''}</div>`;
+ return sv(p+1)+`<h1>${A(d.t)}</h1>${S.tr?`<div class="tr">${d.ti}</div>`:''}${cl}${q}${people}<div class="row"><button class="b" data-a="next" ${ok&&all?'':'disabled'}>${p<2?'الْمَحَطَّةُ التَّالِيَةُ ←':'إِلَى الْقِمَّةِ ←'}</button></div>`}
+function dlg(k){const u=SU[k],f=u.m?'كُنْتَ':'كُنْتِ',rv=u.m?'رَأَيْتَ':'رَأَيْتِ';return`<div class="cd"><b>${A(u.n)}</b><div class="row"><button class="pill" data-a="say2" data-v="${k}_0">${A('أَيْنَ '+f+'؟')}</button><button class="pill" data-a="say2" data-v="${k}_1">${A('مَاذَا '+rv+'؟')}</button></div>${[0,1].filter(j=>S.talk[k+'_'+j]).map(j=>`<div class="ar">${A(u.a[j])}</div>${S.tr?`<div class="tr">${u.ai[j]}</div>`:''}`).join('')}</div>`}
+function top(){if(S.acc==='win')return sv(4)+`<h1>تَمَّ الْحَلُّ! 🎉</h1><div class="fb ok ar">${A('الْفَاعِلُ: يُوسُفُ')}</div><h2>الْقِصَّةُ كَامِلَةً</h2>`+END.map(e=>`<div class="cd">${tx(e[0],e[1])}</div>`).join('')+`<div class="row"><button class="b" data-a="again">الْعَبْ مِنْ جَدِيدٍ</button></div>`;
+ return sv(4)+`<h1>الْقِمَّةُ</h1><p>${tx('مَنِ السَّارِقُ؟ اخْتَرْ بِعِنَايَةٍ.','Siapa pencurinya? Pilih dengan hati-hati.')}</p>`+SU.map((u,k)=>`<button class="pk" data-a="acc" data-v="${k}"><b>${A(u.n)}</b> <span class="mu">${u.i}</span></button>`).join('')+(S.acc!=null?`<div class="fb no">${tx('لَيْسَ هَذَا هُوَ السَّارِقُ. اقْرَأْ دَفْتَرَ الْمُحَقِّقِ وَحَاوِلْ مَرَّةً أُخْرَى.','Bukan dia pelakunya. Baca buku catatan dan coba lagi.')}</div>`:'')}
+function chk(t){const p=S.s-1,d=P[p],n=nz(t);if(!n)return;if(d.ok.some(o=>n.includes(nz(o)))){S.done[p]=1;S.msg[p]='<div class="fb ok">✅ '+A('أَحْسَنْتَ! جَوَابٌ صَحِيحٌ.')+'</div>'}else{S.hint[p]=Math.min((S.hint[p]||0)+1,2);S.msg[p]='<div class="fb no">'+A('لَيْسَ صَحِيحًا. حَاوِلْ مَرَّةً أُخْرَى.')+'</div>'}r()}
+let rec=null,mr=null;
+function mic(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition,vn=$('#vn'),wv=$('#wv');
+ if(rec||mr){try{rec&&rec.stop();mr&&mr.stop()}catch(e){}return}
+ const err=e=>{wv.classList.remove('on');rec=mr=null;vn.textContent=(e&&/denied|NotAllowed|not-allowed/i.test(e.error||e.name||''))?'تَمَّ رَفْضُ إِذْنِ الْمَيْكْرُوفُونِ. فعّلْه من إعدادات المتصفح أو اكتب الجواب. (Izin mikrofon ditolak: aktifkan di pengaturan browser atau ketik jawaban.)':'تعذّر التسجيل. اكتب جوابك. (Gagal merekam, silakan ketik.)'};
+ vn.textContent='سنستخدم الميكروفون لسماع جوابك. (Kami memakai mikrofon untuk mendengar jawabanmu.)';
+ if(SR){rec=new SR();rec.lang='ar-SA';rec.onresult=e=>{$('#inp').value=e.results[0][0].transcript;vn.textContent='✏️ يمكنك تعديل النص ثم الإرسال. (Edit teks bila perlu, lalu kirim.)'};rec.onerror=err;rec.onend=()=>{wv.classList.remove('on');rec=null};wv.classList.add('on');try{rec.start()}catch(e){err(e)}}
+ else if(navigator.mediaDevices&&window.MediaRecorder){navigator.mediaDevices.getUserMedia({audio:true}).then(s=>{const ch=[];mr=new MediaRecorder(s);mr.ondataavailable=e=>ch.push(e.data);mr.onstop=()=>{s.getTracks().forEach(t=>t.stop());wv.classList.remove('on');mr=null;const u=URL.createObjectURL(new Blob(ch));vn.innerHTML='<audio controls src="'+u+'"></audio><br>⚠️ متصفحك لا يدعم التعرف على الصوت، فاكتب جوابك. (Browser ini tidak mendukung pengenalan suara; rekamanmu hanya bisa diputar ulang, jawab dengan menulis.)'};wv.classList.add('on');mr.start();vn.textContent='🔴 …'}).catch(err)}
+ else vn.textContent='المتصفح لا يدعم الصوت. اكتب جوابك. (Browser tidak mendukung fitur suara.)'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,v=b.dataset.v;
+ if(a=='k'){const i=$('#inp');i.value=v=='⌫'?i.value.slice(0,-1):i.value+v;i.focus();return}
+ if(a=='say'){sp(v);return}if(a=='mic'){mic();return}if(a=='chk'){chk($('#inp').value);return}
+ if(a=='tr')S.tr=!S.tr;if(a=='hk')S.h=!S.h;if(a=='nb')S.nb=!S.nb;if(a=='go')S.s=1;
+ if(a=='rev'){S.rev[v]=1;const[p,k]=v.split('_');P[p].c[k].v.forEach(w=>{if(!S.voc.some(x=>x[0]==w[0]))S.voc.push(w)})}
+ if(a=='ask')S.dl=+v;if(a=='say2'){S.talk[v]=1;sp(SU[v.split('_')[0]].a[v.split('_')[1]]);}
+ if(a=='next')S.s++;if(a=='acc')S.acc=+v==3?'win':+v;
+ if(a=='again')S={s:0,rev:{},hint:{},done:{},voc:[],tr:S.tr,h:S.h,nb:false,talk:{},acc:null,msg:{}};
+ r()});
+r();
+</script>
+</body>
+</html>
