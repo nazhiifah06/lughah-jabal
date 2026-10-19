@@ -42,8 +42,8 @@ input.t{flex:1;min-width:0;padding:10px 12px;border:1.5px solid var(--ln);border
 </head>
 <body><div class="w" id="app"></div>
 <script>onerror=function(m,u,l){document.body.insertAdjacentHTML('beforeend','<pre style="color:#fff;background:#900;padding:12px;white-space:pre-wrap">'+m+' (baris '+l+')</pre>')}</script>
+<script>
 const H=/[\u064B-\u0652\u0670\u0640]/g;
-const nz=s=>s.replace(H,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[؟?.,،!]/g,'').replace(/\s+/g,' ').trim();
 const SU=[
 {n:'أَحْمَد',d:'مُصَوِّرٌ مَغْرُورٌ، زَمِيلُ سَلْمَى فِي الْجَامِعَةِ.',i:'Fotografer sombong, teman kuliah Salma.',m:1,a:['كُنْتُ أُصَوِّرُ الضَّبَابَ مَعَ هِنْدٍ.','رَأَيْتُ مَرْيَمَ قُرْبَ الْخَيْمَةِ لَيْلًا.'],ai:['Aku memotret kabut bersama Hind.','Aku melihat Maryam dekat tenda pada malam hari.']},
 {n:'خَالِد',d:'مُرْشِدُ الرِّحْلَةِ، هَادِئٌ، يَعْرِفُ سَلْمَى مِنْ سَنَةٍ.',i:'Pemandu pendakian, tenang, kenal Salma setahun.',m:1,a:['كُنْتُ أَطْبُخُ الْعَشَاءَ مَعَ مَرْيَمَ.','حِذَاءُ يُوسُفَ أَزْرَقُ.'],ai:['Aku memasak makan malam bersama Maryam.','Sepatu Yusuf berwarna biru.']},
